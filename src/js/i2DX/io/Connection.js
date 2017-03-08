@@ -1,16 +1,6 @@
 i2DX.ns('io')
 
 function createConnection (options) {
-  if (typeof navigator.requestMIDIAccess === 'function') {
-    return createMIDIConnection()
-  } else if (typeof webkit !== 'undefined' && webkit.messageHandlers) {
-    return createWebKitConnection(options)
-  } else {
-    return createWebSocketConnection(options)
-  }
-}
-
-function createMIDIConnection (options) {
   var info = document.createElement('div')
   var outputPort
   info.setAttribute('style', 'position:absolute;bottom:0;right:0;z-index:1000')
@@ -94,46 +84,6 @@ function createMIDIConnection (options) {
       outputPort.send(midi)
     }
   }
-  return {send: send}
-}
-
-function createWebKitConnection (options) {
-  function send (message) {
-    webkit.messageHandlers.send.postMessage(message)
-  }
-  return {send: send}
-}
-
-function createWebSocketConnection (options) {
-  var ws = new WebSocket('ws://' + location.host + '/ws')
-  ws.onopen = options.onOpen
-  ws.onclose = options.onClose
-  ws.onmessage = options.onMessage
-  ws.onerror = options.onError
-
-  var junk
-  var sent = false
-
-  for (junk = 'junk'; junk.length < 4096; junk += junk) {
-  }
-  this._junk = junk
-
-  var timer
-
-  function send () {
-    sendRaw(data.join(';'))
-    clearTimeout(timer)
-    sent = true
-    timer = setTimeout(flush, 1)
-  }
-
-  function flush () {
-    if (sent) {
-      sent = false
-      ws.send('junk;' + junk)
-    }
-  }
-
   return {send: send}
 }
 
