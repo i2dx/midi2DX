@@ -5,14 +5,6 @@
       right: axis == 'left' ? 'right' : 'left'
     }
 
-    function x (index) {
-      return 310 + 85 * index
-    }
-
-    function y (index) {
-      return 108 + 245 * (index % 2)
-    }
-
     function style (index) {
       var style = {
         bottom: 108 + 245 * (index % 2) + 'px',
