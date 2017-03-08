@@ -1,1 +1,9 @@
 extends: standard
+parserOptions:
+  ecmaVersion: 5
+  sourceType: script
+  ecmaFeatures:
+    impliedStrict: false
+    jsx: false
+globals:
+  i2DX: true

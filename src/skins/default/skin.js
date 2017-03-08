@@ -1,5 +1,4 @@
-
 i2DX.skin('default', {
-	author: 'dtinth',
-	name: 'Default Skin'
-});
+  author: 'dtinth',
+  name: 'Default Skin'
+})
