@@ -1,0 +1,23 @@
+{
+  "name": "midi2dx",
+  "version": "1.0.0",
+  "description": "i2DX MIDI edition",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Thai Pangsakulyanont <dtinth@spacet.me>",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i2dx/midi2DX.git"
+  },
+  "bugs": {
+    "url": "https://github.com/i2dx/midi2DX/issues"
+  },
+  "homepage": "https://github.com/i2dx/midi2DX#readme",
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "http-server": "^0.9.0"
+  }
+}
