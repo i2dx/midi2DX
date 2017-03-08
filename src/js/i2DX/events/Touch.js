@@ -25,10 +25,11 @@ i2DX.events.Touch.prototype = {
    * @param {Array} checkers the list of checkers to check
    */
   move: function (e, checkers) {
+    var i
     this.x = e.clientX
     this.y = e.clientY
     if (this._checking) {
-      for (var i = 0; i < checkers.length; i++) {
+      for (i = 0; i < checkers.length; i++) {
         var check = true
         for (var j = 0; j < this._handlers.length; j++) {
           if (this._handlers[j].checker === checkers[i]) {
@@ -47,13 +48,13 @@ i2DX.events.Touch.prototype = {
         }
       }
       if (this._handlers.length > 0) {
-        if (i2DX.getParam('hard', 'off') == 'on') {
+        if (i2DX.getParam('hard', 'off') === 'on') {
           this.stopChecking()
         }
       }
     }
     var newHandlers = []
-    for (var i = 0; i < this._handlers.length; i++) {
+    for (i = 0; i < this._handlers.length; i++) {
       var result = this._handlers[i].handler.move(this)
       if (result !== false) {
         newHandlers.push(this._handlers[i])

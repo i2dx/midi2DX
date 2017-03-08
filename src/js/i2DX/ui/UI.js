@@ -13,10 +13,10 @@ i2DX.ui.UI = function () {
 
 i2DX.ui.UI.prototype = {
   /**
-	 * Adds a new component to the interface.
-	 * @param {i2DX.ui.Component} component the component to add
-	 * @param {i2DX.events.TouchHandler} the touch handler
-	 */
+   * Adds a new component to the interface.
+   * @param {i2DX.ui.Component} component the component to add
+   * @param {i2DX.events.TouchHandler} the touch handler
+   */
   add: function (component, handler) {
     component.renderTo(document.body)
     if (handler) {
@@ -25,10 +25,10 @@ i2DX.ui.UI.prototype = {
   },
 
   /**
-	 * Adds a button to the UI.
-	 * @param {String} name name of the button.
-	 * @param {Object} style the style to pass to i2DX.ui.Component#button
-	 */
+   * Adds a button to the UI.
+   * @param {String} name name of the button.
+   * @param {Object} style the style to pass to i2DX.ui.Component#button
+   */
   button: function (name, style, player) {
     player = player || this._defaultPlayer
     var component = new i2DX.ui.Component(name, style, player)
@@ -36,10 +36,10 @@ i2DX.ui.UI.prototype = {
   },
 
   /**
-	 * Adds a rounded button to the UI.
-	 * @param {String} name name of the button.
-	 * @param {Object} style the style to pass to i2DX.ui.Component#button
-	 */
+   * Adds a rounded button to the UI.
+   * @param {String} name name of the button.
+   * @param {Object} style the style to pass to i2DX.ui.Component#button
+   */
   roundedButton: function (name, style, player) {
     player = player || this._defaultPlayer
     var component = new i2DX.ui.Component(name, style, player)
@@ -47,10 +47,10 @@ i2DX.ui.UI.prototype = {
   },
 
   /**
-	 * Adds a button to the UI whose bound is check by actual element.
-	 * @param {String} name name of the button.
-	 * @param {Object} style the style to pass to i2DX.ui.Component#button
-	 */
+   * Adds a button to the UI whose bound is check by actual element.
+   * @param {String} name name of the button.
+   * @param {Object} style the style to pass to i2DX.ui.Component#button
+   */
   elementButton: function (name, style, player) {
     player = player || this._defaultPlayer
     var component = new i2DX.ui.Component(name, style, player)
@@ -58,10 +58,10 @@ i2DX.ui.UI.prototype = {
   },
 
   /**
-	 * Adds a turntable to the UI.
-	 * @param {Number} width width of the turntable.
-	 * @param {String} placement either "left" or "right"
-	 */
+   * Adds a turntable to the UI.
+   * @param {Number} width width of the turntable.
+   * @param {String} placement either "left" or "right"
+   */
   turntable: function (width, placement, player) {
     player = player || this._defaultPlayer
     var style = {top: 0, bottom: 0, width: width}
@@ -71,8 +71,8 @@ i2DX.ui.UI.prototype = {
   },
 
   /**
-	 * Adds a full-screen turntable to the UI.
-	 */
+   * Adds a full-screen turntable to the UI.
+   */
   turntableFullscreen: function (player) {
     player = player || this._defaultPlayer
     var component = new i2DX.ui.Component(
@@ -87,17 +87,17 @@ i2DX.ui.UI.prototype = {
   },
 
   /**
-	 * Sets the default player number for newly created components.
-	 * @param {Number} playerNumber the player number
-	 */
+   * Sets the default player number for newly created components.
+   * @param {Number} playerNumber the player number
+   */
   setDefaultPlayer: function (playerNumber) {
     this._defaultPlayer = playerNumber
   },
 
   /**
-	 * Gets the default player number.
-	 * @return {Number} the default player number
-	 */
+   * Gets the default player number.
+   * @return {Number} the default player number
+   */
   getDefaultPlayer: function () {
     return this._defaultPlayer
   },

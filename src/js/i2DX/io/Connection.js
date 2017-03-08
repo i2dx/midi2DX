@@ -148,8 +148,8 @@ i2DX.io.Connection = {
   _sent: false,
 
   /**
-	 * Initialize the Connection. Must be called before use.
-	 */
+   * Initialize the Connection. Must be called before use.
+   */
   init: function () {
     i2DX.broadcast('status', 'Connecting to i2DX...')
     this._connection = createConnection({
@@ -163,9 +163,9 @@ i2DX.io.Connection = {
   },
 
   /**
-	 * Send raw data to server. Do not use!
-	 * @param {String} x data to send
-	 */
+   * Send raw data to server. Do not use!
+   * @param {String} x data to send
+   */
   sendRaw: function (x) {
     try {
       this._connection.send(x)
@@ -175,9 +175,9 @@ i2DX.io.Connection = {
   },
 
   /**
-	 * Send a data to server
-	 * @param {Array} data data to send, as array
-	 */
+   * Send a data to server
+   * @param {Array} data data to send, as array
+   */
   send: function (data) {
     this.sendRaw(data.join(';'))
   },

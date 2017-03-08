@@ -62,7 +62,7 @@ i2DX.events.ButtonHandler.prototype = {
   },
   _up: function () {
     this._count--
-    if (this._count == 0) {
+    if (this._count === 0) {
       this._component.set('state', 'released')
       i2DX.broadcast(
         'up',

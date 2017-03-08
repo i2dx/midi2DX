@@ -21,26 +21,26 @@ i2DX.ui.Component = function (name, style, player) {
 
 i2DX.ui.Component.prototype = {
   /**
-	 * Returns the name of the component
-	 * @return {String} name
-	 */
+   * Returns the name of the component
+   * @return {String} name
+   */
   getName: function () {
     return this._name
   },
 
   /**
-	 * Returns the player number associated with this component.
-	 * @return {Number} the player number
-	 */
+   * Returns the player number associated with this component.
+   * @return {Number} the player number
+   */
   getPlayer: function () {
     return this._player
   },
 
   /**
-	 * Sets the data-attribute of the component
-	 * @param {String} key key
-	 * @param {String} value value
-	 */
+   * Sets the data-attribute of the component
+   * @param {String} key key
+   * @param {String} value value
+   */
   set: function (key, value) {
     this._stateMap[key] = value
     var className = ['component', this.getName()]
@@ -52,24 +52,24 @@ i2DX.ui.Component.prototype = {
   },
 
   /**
-	 * Renders the element to a DOM element
-	 * @param {HTMLElement} container the element to render to
-	 */
+   * Renders the element to a DOM element
+   * @param {HTMLElement} container the element to render to
+   */
   renderTo: function (container) {
     container.appendChild(this._element)
   },
 
   /**
-	 * Returns the bounds of this component.
-	 * @return {Object} an object with following keys:
-	 *
-	 * * left
-	 * * top
-	 * * right
-	 * * bottom
-	 * * width
-	 * * height
-	 */
+   * Returns the bounds of this component.
+   * @return {Object} an object with following keys:
+   *
+   * * left
+   * * top
+   * * right
+   * * bottom
+   * * width
+   * * height
+   */
   getBounds: function () {
     var b = {}
     b.left = this._element.offsetLeft
@@ -82,8 +82,8 @@ i2DX.ui.Component.prototype = {
   },
 
   /**
-	 * Checks if the X, Y coordinate is the current component.
-	 */
+   * Checks if the X, Y coordinate is the current component.
+   */
   isAtPoint: function (x, y) {
     var element = document.elementFromPoint(x, y)
     while (element) {
@@ -94,9 +94,9 @@ i2DX.ui.Component.prototype = {
   },
 
   /**
-	 * Returns the DOM element.
-	 * @return {HTMLElement} the element that represents this component
-	 */
+   * Returns the DOM element.
+   * @return {HTMLElement} the element that represents this component
+   */
   getElement: function () {
     return this._element
   }

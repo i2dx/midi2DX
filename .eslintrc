@@ -7,3 +7,6 @@ parserOptions:
     jsx: false
 globals:
   i2DX: true
+rules:
+  eqeqeq: off
+  no-redeclare: off
